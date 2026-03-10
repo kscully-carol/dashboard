@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #060607; --card-bg: #0d0d14; --card-bg2: #101018; --border: #181825; --border-bright: #222235;
+      --bg: #060607; --card-bg: #0d0d14; --border: #181825; --border-bright: #222235;
       --cyan: #00F0FF; --red: #FF2D2D; --amber: #F59E0B; --green: #22C55E;
       --text: #E2E8F0; --muted: #64748B; --muted2: #94A3B8;
       --pixel: 'Press Start 2P', monospace; --mono: 'JetBrains Mono', monospace;
@@ -46,22 +46,25 @@
     .badge-green { background:rgba(34,197,94,0.1); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
     .badge-amber { background:rgba(245,158,11,0.1); color:var(--amber); border:1px solid rgba(245,158,11,0.3); }
     .badge-cyan { background:rgba(0,240,255,0.08); color:var(--cyan); border:1px solid rgba(0,240,255,0.25); }
-    .cal-day { margin-bottom:14px; }
-    .cal-day:last-child { margin-bottom:0; }
+    .cal-day { margin-bottom:14px; } .cal-day:last-child { margin-bottom:0; }
     .day-label { font-family:var(--pixel); font-size:0.4rem; color:var(--muted2); margin-bottom:6px; letter-spacing:0.1em; }
     .day-label.today { color:var(--green); text-shadow:0 0 6px rgba(34,197,94,0.4); }
     .cal-event { display:flex; align-items:center; gap:10px; font-size:0.72rem; color:var(--text); padding:5px 9px; background:rgba(255,255,255,0.03); border-left:2px solid var(--border-bright); border-radius:0 5px 5px 0; margin-bottom:4px; }
     .cal-event.today-event { background:rgba(34,197,94,0.05); border-left-color:var(--green); }
     .cal-event.bsm { background:rgba(100,116,139,0.04); border-left-color:var(--muted); color:var(--muted2); }
-    .event-time { font-size:0.65rem; color:var(--muted); min-width:54px; }
-    .event-name { flex:1; }
+    .event-time { font-size:0.65rem; color:var(--muted); min-width:54px; } .event-name { flex:1; }
     .todo-item { display:flex; align-items:flex-start; gap:10px; font-size:0.78rem; padding:8px 0; border-bottom:1px solid var(--border); color:var(--text); cursor:pointer; }
     .todo-item:last-child { border-bottom:none; padding-bottom:0; }
     .todo-check { width:14px;height:14px;border:1px solid var(--cyan);border-radius:3px;flex-shrink:0;margin-top:2px;position:relative;cursor:pointer;transition:background 0.15s; }
     .todo-check.done { background:var(--cyan); }
     .todo-check.done::after { content:'v';position:absolute;top:-2px;left:2px;font-size:10px;color:var(--bg);font-weight:900; }
-    .todo-text { flex:1; line-height:1.4; }
-    .todo-text.done { text-decoration:line-through; color:var(--muted); }
+    .todo-text { flex:1; line-height:1.4; } .todo-text.done { text-decoration:line-through; color:var(--muted); }
+    .work-todo-item { display:flex; align-items:flex-start; gap:10px; font-size:0.78rem; padding:7px 0; border-bottom:1px solid var(--border); color:var(--text); cursor:pointer; }
+    .work-todo-item:last-child { border-bottom:none; padding-bottom:0; }
+    .work-todo-check { width:14px;height:14px;border:1px solid var(--amber);border-radius:3px;flex-shrink:0;margin-top:2px;position:relative;cursor:pointer;transition:background 0.15s; }
+    .work-todo-check.done { background:var(--amber); }
+    .work-todo-check.done::after { content:'v';position:absolute;top:-2px;left:2px;font-size:10px;color:var(--bg);font-weight:900; }
+    .work-todo-text { flex:1; line-height:1.4; } .work-todo-text.done { text-decoration:line-through; color:var(--muted); }
     .empty { font-size:0.7rem; color:var(--muted); font-style:italic; text-align:center; padding:12px 0; border:1px dashed var(--border); border-radius:6px; }
     .stat-box { text-align:center; padding:12px 8px; }
     .stat-num { font-family:var(--pixel); font-size:1.1rem; color:var(--cyan); text-shadow:0 0 10px rgba(0,240,255,0.5); display:block; margin-bottom:4px; }
@@ -80,7 +83,7 @@
       <div class="header-top"><div class="logo-icon">🎭</div><h1>SCULLY INTEL HQ<span class="cursor"></span></h1></div>
       <div class="header-meta"><div class="status-pill"><div class="status-dot"></div>OPERATIONAL</div><div class="date-line" id="dateLine">LOADING...</div></div>
     </header>
-    <div class="section-label">// WEEKLY SITREP</div>
+    <div class="section-label">//  WEEKLY SITREP</div>
     <div class="card" style="margin-bottom:28px;">
       <div class="grid-3">
         <div class="stat-box" style="border-right:1px solid var(--border);"><span class="stat-num">6</span><span class="stat-label">active meetings</span></div>
@@ -88,7 +91,7 @@
         <div class="stat-box"><span class="stat-num" style="color:var(--amber);">0</span><span class="stat-label">jobs tracked</span></div>
       </div>
     </div>
-    <div class="section-label">// MISSION SCHEDULE &amp; ACTIVE DIRECTIVES</div>
+    <div class="section-label">//  MISSION SCHEDULE &amp; ACTIVE DIRECTIVES</div>
     <div class="grid-2" style="margin-bottom:28px;">
       <div class="card">
         <div class="card-header"><div class="card-title">WEEK OF MAR 9</div><div class="badge badge-cyan">W11</div></div>
@@ -119,7 +122,14 @@
         </div>
       </div>
     </div>
-    <div class="section-label">// OPERATION DOSSIER &amp; CLASSIFIED CONCEPTS</div>
+    <div class="section-label">//  WORK TO-DO LIST</div>
+    <div class="card" style="margin-bottom:28px;">
+      <div class="card-header"><div class="card-title">FIELD NOTES - WORK TASKS</div><div class="badge badge-amber">PHOTO UPDATED</div></div>
+      <div id="workTodos">
+        <div class="empty">[ AWAITING INTEL UPLOAD ]<br><br>Send a photo of your to-do list and I will populate this section</div>
+      </div>
+    </div>
+    <div class="section-label">//  OPERATION DOSSIER &amp; CLASSIFIED CONCEPTS</div>
     <div class="grid-2" style="margin-bottom:28px;">
       <div class="card accent-amber">
         <div class="card-header"><div class="card-title amber">OPERATION DOSSIER</div><div class="badge badge-amber">JOB HUNT</div></div>
@@ -135,6 +145,7 @@
     function pad(n){return String(n).padStart(2,'0');}
     function updateTime(){const d=new Date();const days=['SUN','MON','TUE','WED','THU','FRI','SAT'];const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];document.getElementById('topTime').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' - '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());document.getElementById('dateLine').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toUpperCase();}
     updateTime();setInterval(updateTime,1000);
+    function toggleWorkTodo(item){const check=item.querySelector('.work-todo-check');const text=item.querySelector('.work-todo-text');check.classList.toggle('done');text.classList.toggle('done');}
     function toggleTodo(item){const check=item.querySelector('.todo-check');const text=item.querySelector('.todo-text');check.classList.toggle('done');text.classList.toggle('done');const open=document.querySelectorAll('.todo-check:not(.done)').length;document.getElementById('openBadge').textContent=open+' OPEN';}
   </script>
 </body>
