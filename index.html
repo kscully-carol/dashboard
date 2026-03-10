@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0B0F1E; --card-bg: #111827; --border: #1E293B; --border-bright: #2A3A50;
+      --bg: #060607; --card-bg: #0d0d14; --card-bg2: #101018; --border: #181825; --border-bright: #222235;
       --cyan: #00F0FF; --red: #FF2D2D; --amber: #F59E0B; --green: #22C55E;
       --text: #E2E8F0; --muted: #64748B; --muted2: #94A3B8;
       --pixel: 'Press Start 2P', monospace; --mono: 'JetBrains Mono', monospace;
@@ -52,7 +52,7 @@
     .day-label.today { color:var(--green); text-shadow:0 0 6px rgba(34,197,94,0.4); }
     .cal-event { display:flex; align-items:center; gap:10px; font-size:0.72rem; color:var(--text); padding:5px 9px; background:rgba(255,255,255,0.03); border-left:2px solid var(--border-bright); border-radius:0 5px 5px 0; margin-bottom:4px; }
     .cal-event.today-event { background:rgba(34,197,94,0.05); border-left-color:var(--green); }
-    .cal-event.bsm { background:rgba(100,116,139,0.06); border-left-color:var(--muted); color:var(--muted2); }
+    .cal-event.bsm { background:rgba(100,116,139,0.04); border-left-color:var(--muted); color:var(--muted2); }
     .event-time { font-size:0.65rem; color:var(--muted); min-width:54px; }
     .event-name { flex:1; }
     .todo-item { display:flex; align-items:flex-start; gap:10px; font-size:0.78rem; padding:8px 0; border-bottom:1px solid var(--border); color:var(--text); cursor:pointer; }
@@ -66,7 +66,7 @@
     .stat-box { text-align:center; padding:12px 8px; }
     .stat-num { font-family:var(--pixel); font-size:1.1rem; color:var(--cyan); text-shadow:0 0 10px rgba(0,240,255,0.5); display:block; margin-bottom:4px; }
     .stat-label { font-size:0.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; }
-    .top-bar { background:rgba(255,255,255,0.02); border-bottom:1px solid var(--border); padding:6px 16px; font-size:0.6rem; color:var(--muted); display:flex; justify-content:space-between; }
+    .top-bar { background:rgba(255,255,255,0.015); border-bottom:1px solid var(--border); padding:6px 16px; font-size:0.6rem; color:var(--muted); display:flex; justify-content:space-between; }
     .top-bar span { color:var(--cyan); }
     .cursor { display:inline-block; width:8px; height:1em; background:var(--cyan); margin-left:4px; vertical-align:middle; animation:blink 1s step-end infinite; }
     @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
@@ -103,7 +103,7 @@
         <div class="cal-day"><div class="day-label">THU MAR 12</div>
           <div class="cal-event"><span class="event-time">11:00</span><span class="event-name">CRE Middle Market</span></div>
           <div class="cal-event"><span class="event-time">13:00</span><span class="event-name">Credit Excellence / MSFT</span></div>
-          <div class="cal-event"><span class="event-time">14:00</span><span class="event-name">Pipeline Check-in Call</span></div></div>
+          <div class="cal-event"><span class="event-time">14:00</span><span class="event-name">Pipeline Check-in</span></div></div>
         <div class="cal-day"><div class="day-label">FRI MAR 13</div>
           <div class="cal-event bsm"><span class="event-time">--</span><span class="event-name">Nothing on the books</span></div></div>
       </div>
@@ -123,11 +123,11 @@
     <div class="grid-2" style="margin-bottom:28px;">
       <div class="card accent-amber">
         <div class="card-header"><div class="card-title amber">OPERATION DOSSIER</div><div class="badge badge-amber">JOB HUNT</div></div>
-        <div class="empty">[ NO TARGETS ACQUIRED YET ]<br><br>Tell me what to add -<br>company, role, status</div>
+        <div class="empty">[ NO TARGETS ACQUIRED YET ]<br><br>Tell me what to add - company, role, status</div>
       </div>
       <div class="card">
         <div class="card-header"><div class="card-title">CLASSIFIED CONCEPTS</div><div class="badge badge-cyan">IDEAS</div></div>
-        <div class="empty">[ INTEL PENDING ]<br><br>Drop ideas here anytime -<br>just tell me what to log</div>
+        <div class="empty">[ INTEL PENDING ]<br><br>Drop ideas here anytime - just tell me what to log</div>
       </div>
     </div>
   </div>
