@@ -2,10 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kristen's Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0f0; min-height: 100vh; padding: 20px; }
+    h1 { font-size: 1.5rem; margin-bottom: 4px; color: #c9b8ff; }
+    .subtitle { font-size: 0.85rem; color: #888; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    .card { background: #1a1a2e; border: 1px solid #2e2e4e; border-radius: 12px; padding: 16px; }
+    .card h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 12px; }
+    .card.full { grid-column: 1 / -1; }
+    .cal-day { margin-bottom: 10px; }
+    .cal-day .day-label { font-size: 0.75rem; color: #c9b8ff; font-weight: 600; margin-bottom: 4px; }
+    .cal-event { font-size: 0.82rem; color: #ccc; padding: 4px 8px; background: #252540; border-radius: 6px; margin-bottom: 3px; }
+    .cal-event .time { color: #888; font-size: 0.75rem; margin-right: 6px; }
+    .todo-item { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; padding: 6px 0; border-bottom: 1px solid #2a2a40; color: #ccc; }
+    .todo-item:last-child { border-bottom: none; }
+    .todo-item input { margin-top: 2px; accent-color: #c9b8ff; }
+    .empty { color: #555; font-size: 0.82rem; font-style: italic; }
+  </style>
 </head>
 <body>
-<h1>Loading...</h1>
+  <h1>Kristen's Dashboard</h1>
+  <p class="subtitle" id="dateLine">Loading...</p>
+  <div class="grid">
+    <div class="card full"><h2>This Week</h2>
+      <div class="cal-day"><div class="day-label">Monday, Mar 9</div><div class="cal-event"><span class="time">9:00 AM</span>Economic and Market Update</div><div class="cal-event"><span class="time">11:00 AM</span>Blood test</div></div>
+      <div class="cal-day"><div class="day-label">Tuesday, Mar 10</div><div class="cal-event"><span class="time">9:30 AM</span>CRE Month</div><div class="cal-event"><span class="time">1:00 PM</span>Credit Excellence Bi-Weekly</div></div>
+      <div class="cal-day"><div class="day-label">Wednesday, Mar 11</div><div class="cal-event"><span class="time">11:00 AM</span>1:1 with Michele</div></div>
+      <div class="cal-day"><div class="day-label">Thursday, Mar 12</div><div class="cal-event"><span class="time">11:00 AM</span>CRE Middle Market</div><div class="cal-event"><span class="time">1:00 PM</span>Credit Excellence</div><div class="cal-event"><span class="time">2:00 PM</span>Pipeline Check-in Call</div></div>
+      <div class="cal-day"><div class="day-label">Friday, Mar 13</div><div class="cal-event" style="color:#555;">Nothing on the books</div></div>
+    </div>
+    <div class="card"><h2>To-Dos</h2><div class="todo-item"><input type="checkbox" /> Call hospital center - get refund</div><div class="todo-item"><input type="checkbox" /> Send agenda for Wed 1:1 with Michele</div></div>
+    <div class="card"><h2>Job Hunt</h2><div class="empty">No roles tracked yet</div></div>
+    <div class="card full"><h2>Ideas</h2><div class="empty">Drop your ideas here anytime!</div></div>
+  </div>
+  <script>const d = new Date(); document.getElementById('dateLine').textContent = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });</script>
 </body>
 </html>
